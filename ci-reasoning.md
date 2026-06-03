@@ -13,10 +13,14 @@
 ![GitHub Actions run for this branch](docs/evidence/ci/actions-run.png)
 
 - **Repository / owner:** `noahcordero1/lobechat-aws`
-- **Actions run URL:** `<<FILL-RUN-URL>>`  <!-- e.g. https://github.com/noahcordero1/lobechat-aws/actions/runs/XXXXXXXXXX -->
-- **Commit SHA the run executed against:** `<<FILL-COMMIT-SHA>>`
-- **Outcome:** green run — the four *correctness* gates pass; the four *finding-generator*
-  gates are warn-only and surface their real findings as annotations/logs (see policy below).
+- **Actions run URL:** https://github.com/noahcordero1/lobechat-aws/actions/runs/26870753778
+- **Commit SHA the run executed against:** `f73cc209a5628fc27118bc7d6722ccc9a78bb0d5`
+- **Run timestamp:** 2026-06-03T07:40:14Z
+- **Outcome:** **green run** — all six jobs succeeded. The four *correctness* gates
+  (`docker compose config`, `yamllint` on `ci.yml`, `actionlint`, `cz check`) pass cleanly;
+  the four *finding-generator* gates (`hadolint`, `trivy fs`, `trivy config`, `gitleaks`)
+  are warn-only and surface their real findings in the logs/annotations (see policy below).
+  No gate was skipped, cancelled, or deleted.
 
 ---
 
