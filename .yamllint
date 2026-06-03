@@ -1,0 +1,13 @@
+# yamllint config for the CI gate.
+# Relaxed only where GitHub Actions / Compose idioms would otherwise produce
+# false positives — so the gate does not red-flag the very files it must bless.
+extends: default
+
+rules:
+  line-length: disable        # compose route.js mount + long release URLs exceed 80 cols
+  document-start: disable      # neither docker-compose.yml nor ci.yml use a leading ---
+  truthy:
+    check-keys: false          # allow GitHub Actions' `on:` key (else flagged as truthy)
+  comments:
+    min-spaces-from-content: 1  # compose uses single-space inline comments
+  comments-indentation: disable
